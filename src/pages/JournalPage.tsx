@@ -158,9 +158,9 @@ const JournalPage = () => {
         {
           authors: "Hasan, M. S. and Ghosal, S.",
           year: 2026,
-          title: "Types of Social Networks of Urban Older Indians: A Cross-Sectional Study",
+          title: "Types of Social Networks among Urban Older Indians: A Cross-sectional Study",
           journal: "Discover Public Health",
-          doi: "",
+          doi: "10.1186/s12982-026-02003-z",
         },
         {
           authors: "Hasan, M. S. and Ghosal, S.",
