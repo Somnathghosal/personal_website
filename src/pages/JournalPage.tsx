@@ -507,8 +507,8 @@ const JournalPage = () => {
                   className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                 >
                   <p className="text-base md:text-lg text-gray-800 mb-2">
-                    {paper.authors} ({paper.year}). {paper.title}.{" "}
-                    <span className="italic">{paper.journal}</span>{" "}
+                    {paper.authors} ({paper.year}). {paper.title}
+                    <span className="italic">{paper.journal}</span>
                     {paper.details}.
                   </p>
                   {paper.doi && (
