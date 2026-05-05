@@ -71,7 +71,7 @@ const Team = () => {
 
         {
           name: "Vijeta Kachhap (2026 – Present)",
-          topic: "Artificial Intelligence, Public Policy, and Law",
+          topic: "Digital Divide and Educational Disparities: A Human Rights Perspective under Article 21",
         },
         {
           name: "Saikat Paul (2026 – Present)",
@@ -132,20 +132,30 @@ const Team = () => {
       title: "Bachelor Thesis Project",
       icon: <GraduationCap className="mr-2 text-teal-600" />,
       scholars: [
-        {
-          name: "Bhukya Prakash, Vannam Rohit",
+       {
+          name: "S Abhinay",
           topic:
-            "Transforming rural development through action research",
+            "The Indian Folk Art Marketing Opportunities",
+        },
+        {
+          name: "G Solomon Raju",
+          topic:
+            "The Future of Rural Indian Craft",
+        },
+        {
+          name: "V Rohit, Bhukya Prakash",
+          topic:
+            "Transforming Rural Development through Action Research",
         },
         {
           name: "Rohit Vannam, Gopu Abhinav Reddy",
           topic:
-            "Researching the conservation of indegenous art work",
+            "Researching the Conservation of Indegenous Art Work",
         },
         {
           name: "Sarayu Gosika, Bhukya Prakash",
           topic:
-            "Reaching out to the Last with advanced technical solutions",
+            "Reaching Out to the Last with Advanced Technical Solutions",
         },
         {
           name: "Rishikesh Maurya",
