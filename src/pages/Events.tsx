@@ -2,6 +2,11 @@ import { motion } from "framer-motion";
 
 const events = [
   {
+    title:"Awareness Building Workshop on 'Health and Hygiene for Rural Women' and 'Alternative Household Energy for Rural Areas' Under the Aegis of Unnat Bharat Abhiyan, IIT Kharagpur Unit",
+    location: "Centre for Rural Development and Innovative Sustainable Technology (CRDIST), Indian Institute of Technology Kharagpur",
+    date: "19 March 2026",
+  },
+  {
     title:
       "SPARC National Conclave 2026 ",
     location: "IIT Kharagpur Research Park, Kolkata",
