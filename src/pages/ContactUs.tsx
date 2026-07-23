@@ -2,6 +2,8 @@ import { useState, ChangeEvent, FormEvent, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
+import logo from "../assests/GL_Logo_4.jpg";
+import { Linkedin, Mail, Twitter, Youtube } from "lucide-react";
 const ContactUs = () => {
   const form = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
@@ -204,27 +206,132 @@ const ContactUs = () => {
           </div>
 
           {/* Additional Contact Information */}
-          <div className="max-w-2xl mx-auto mt-16 text-center gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <img
-                src="https://res.cloudinary.com/dq1llsy7f/image/upload/v1743854402/oymhfzlxj8k6glofetpn.jpg"
-                alt="GEAR - Geo-Action Research"
-                className="h-28 mx-auto max-h-full mb-4"
-              />
-              <h3 className="text-xl font-bold text-blue-700 mb-4">
-                Office Hours
-              </h3>
-              <p className="mb-2">
-                <strong>Monday-Friday:</strong> 9:00 AM - 5:00 PM
-              </p>
-              <p className="mb-2">
-                <strong>Saturday-Sunday:</strong> Closed
-              </p>
-              <p className="mt-4 text-gray-600">
-                Please allow 2-3 business days for a response to your inquiry.
-              </p>
+          
+            
+            <div className="max-w-7xl mx-auto mt-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 items-stretch">
+            
+                {/* Google Maps Card */}
+            
+                <div className="bg-white border border-gray-300 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col">
+                  
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.976487257389!2d87.31968607536948!3d22.31672897967482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d4421ef1e4955%3A0x6e822a9af7219c0f!2sCentre%20for%20Rural%20Development%20and%20Innovative%20Sustainable%20Technology!5e0!3m2!1sen!2sin!4v1784757587112!5m2!1sen!2sin"
+                    className="w-full h-72 rounded-lg border-0 flex-grow"
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    title="CRDIST Location"
+                  ></iframe>
+
+                </div>
+            
+            
+            
+                {/* Office Hours Card */}
+            
+                <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col justify-center">
+                  <img
+                    //src="https://res.cloudinary.com/dq1llsy7f/image/upload/v1743854402/oymhfzlxj8k6glofetpn.jpg"
+                    src={logo}
+                    alt="GEAR - Geo-Action Research"
+                    className="h-28 mx-auto max-h-full mb-4"
+                  />
+            
+                  <h3 className="text-xl font-bold text-blue-700 mb-4 text-center">
+                    Office Hours
+                  </h3>
+            
+                  <p className="mb-2 text-center">
+                    <strong>Monday-Friday:</strong> 9:00 AM - 5:00 PM
+                  </p>
+            
+                  <p className="mb-2 text-center">
+                    <strong>Saturday-Sunday:</strong> Closed
+                  </p>
+            
+                  <p className="mt-4 text-gray-600 text-center">
+                    Please allow 2-3 business days for a response to your inquiry.
+                  </p>
+                </div>
+
+
+                {/* Contact Us Card */}
+                
+                <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col justify-center">
+                
+                  <h3 className="text-2xl font-bold text-blue-700 text-center mb-4">
+                    Contact Us
+                  </h3>
+                
+                  <p className="text-center font-semibold text-lg">
+                    Ghosal
+                    <br />
+                    Participatory Geo-Action Research Group
+                  </p>
+                
+                  <div className="mt-4 text-center text-gray-700 leading-7">
+                    <p>
+                      Rural Development Center
+                      <br />
+                      Indian Institute of Technology Kharagpur
+                      <br />
+                      Kharagpur - 721302, West Bengal, INDIA
+                    </p>
+                  </div>
+                
+                  <div className="flex items-center justify-center mt-5">
+                    <Mail className="h-5 w-5 mr-3 text-blue-600" />
+                
+                    <a
+                      href="mailto:drsomnathghosal@gmail.com"
+                      className="text-blue-600 hover:underline"
+                    >
+                      drsomnathghosal@gmail.com
+                    </a>
+                  </div>
+                
+                  <div className="flex justify-center space-x-6 mt-6">
+                
+                    <a
+                      href="https://www.linkedin.com/in/somnath-ghosal-556980228/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-blue-700"
+                    >
+                      <Linkedin size={30} />
+                    </a>
+                
+                    <a
+                      href="https://x.com/SomnathGhosal13"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-blue-700"
+                    >
+                      <Twitter size={30} />
+                    </a>
+                
+                    <a
+                      href="https://www.youtube.com/channel/UCWGsmVznFv1_nRaRT24SV7Q"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-red-600"
+                    >
+                      <Youtube size={30} />
+                    </a>
+                
+                  </div>
+                
+                  <p className="text-center text-sm text-gray-500 mt-6">
+                    © {new Date().getFullYear()} Dr Somnath Ghosal. All rights reserved.
+                  </p>
+                
+                </div>
+
+
+
+              </div>
             </div>
-          </div>
         </div>
       </div>
     </div>

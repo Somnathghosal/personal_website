@@ -3,11 +3,12 @@ import { motion } from "framer-motion";
 const Hero = () => {
   const focusAreas = [
     "Public Policy, Planning, and Development",
-    "Community Participation Action Research",
+    "Community Participation for Action Research",
     "Science and Public Policy Integration",
     "Skill Development for Livelihood Generation",
-    "Rural Infrastructure Planning and Development (Water, Health, Education)",
+    "Rural Infrastructure Planning and Development (Drinking Water, Health, and Education)",
     "Social Forestry and Natural Resource-Based Entrepreneurship",
+    "Ethnographic, Qualitative, and Archival Research",
   ];
 
   return (
@@ -37,7 +38,7 @@ const Hero = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mt-10 mt-16 leading-relaxed">
               Ghosal <br />
               <span className="text-3xl md:text-4xl lg:text-5xl font-bold">
-                Participatory Action Research Group
+                Participatory Geo-Action Research Group
               </span>
             </h1>
 

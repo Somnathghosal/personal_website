@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "../assests/GL_Logo_4.jpg";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -91,7 +92,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2">
             <img
-              src="https://res.cloudinary.com/dq1llsy7f/image/upload/v1743854402/oymhfzlxj8k6glofetpn.jpg"
+              //src="https://res.cloudinary.com/dq1llsy7f/image/upload/v1743854402/oymhfzlxj8k6glofetpn.jpg"
+              src={logo}
               alt="GEAR - Geo-Action Research"
               className="h-12 md:h-16 lg:h-20 max-h-full"
             />

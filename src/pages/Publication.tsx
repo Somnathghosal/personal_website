@@ -8,7 +8,7 @@ const publicationCategories = [
     name: "Journal",
     path: "/publications/journal",
     description:
-      "Peer-reviewed academic journal articles covering various aspects of regional planning, rural livelihood, community based natural resource management, public policy-planning and development and environmental biodiversity.",
+      "Peer-reviewed academic journal articles covering various aspects of regional planning, rural livelihood, community based natural resource management, public policy, planning and development, environment, climate change adaptation, biodiversity etc.",
     icon: "📰",
   },
   {

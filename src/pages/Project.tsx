@@ -141,16 +141,12 @@ const ProjectsComponent = () => {
     {
       type: "Principal Investigator",
       projects: [
+        
+        
         {
           title:
-            "Advancing Agricultural Resilience in West Bengal through Innovative Solutions in Value Chain Financing, Technology Adoption, and Smart Resource Management",
-          period: "2025 – 2026",
-          role: "Principal Investigator",
-        },
-        {
-          title:
-            "Necessity of Community-Driven Hard Infrastructures for Rural Well-Being",
-          period: "2023 - 2026",
+            "Sustainable Lake Operations",
+          period: "2026 – 2028",
           role: "Principal Investigator",
         },
 
@@ -172,6 +168,18 @@ const ProjectsComponent = () => {
     {
       type: "Principal Investigator",
       projects: [
+        {
+          title:
+            "Necessity of Community-Driven Hard Infrastructures for Rural Well-Being",
+          period: "2023 - 2026",
+          role: "Principal Investigator",
+        },
+        {
+          title:
+            "Advancing Agricultural Resilience in West Bengal through Innovative Solutions in Value Chain Financing, Technology Adoption, and Smart Resource Management",
+          period: "2025 – 2026",
+          role: "Principal Investigator",
+        },
         {
           title: "Transferability and Scaling-up of Agri-Technologies",
           period: "2025",

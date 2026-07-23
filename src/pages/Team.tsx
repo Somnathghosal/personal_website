@@ -132,6 +132,10 @@ const Team = () => {
       title: "Bachelor Thesis Project",
       icon: <GraduationCap className="mr-2 text-teal-600" />,
       scholars: [
+        {
+          name: "Eslavath Chakravarthi",
+          topic: "Reaching to the \'Last\' with Rural Technologies for Better Livelihood Generation",
+        },
        {
           name: "S Abhinay",
           topic:
@@ -211,7 +215,9 @@ const Team = () => {
         {
           name: "Shubhang Singh",
           topic: "Cattle Action Recognition in Dairy Farms",
+          
         },
+        
       ],
     },
 

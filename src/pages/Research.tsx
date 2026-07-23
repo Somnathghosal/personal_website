@@ -83,7 +83,13 @@ const Research = () => {
         {/* Image Section - Made responsive for mobile */}
         <div className="w-full lg:w-1/2 p-4 flex flex-col items-center justify-center lg:sticky lg:top-20 lg:h-screen pt-10">
           <div
-            className="w-full max-w-lg h-64 sm:h-80 md:h-96 bg-cover bg-center cursor-pointer"
+            className=" w-full
+    max-w-2xl
+    h-[250px]
+    sm:h-[300px]
+    md:h-[380px]
+    lg:h-[450px]
+    cursor-pointer"
             style={{
               backgroundImage: `url("${imageUrl}")`,
               backgroundSize: "contain",
@@ -92,7 +98,7 @@ const Research = () => {
             }}
             onClick={toggleFullscreen}
           ></div>
-          <p className="text-blue-500 text-center mt-4 mb-6">
+          <p className="text-blue-500 text-center mt-4 mb-6 font-bold">
             Click the image to enlarge
           </p>
         </div>

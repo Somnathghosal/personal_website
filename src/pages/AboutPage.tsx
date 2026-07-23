@@ -10,7 +10,7 @@ const AboutPage = () => {
     {
       id: 23,
       date: "25th March 2026",
-      event: "Prof. Ghosal has become Vice President and Council Member of ICERD, Tokyo, Japan.",
+      event: "Prof. Ghosal has become Vice President and Council Member of ISERD, Tokyo, Japan.",
     },
     {
       id: 22,
@@ -204,7 +204,7 @@ const AboutPage = () => {
                     University of the Fraser Valley and many other leading
                     universities and research institutes in India and abroad.
                     Additionally, he plays a key role in the sensitization of
-                    the National Education Policy for Government of India. Dr. Ghosal is a core committee member of the Scheme for Promotion of Academic and Research Collaboration (SPARC).
+                    the National Education Policy for Government of India. Dr. Ghosal is a national core committee member of the Scheme for Promotion of Academic and Research Collaboration (SPARC), Ministry of Education, Government of India.
                   </p>{" "}
                   <br></br>
                   Dr. Ghosal's work is deeply rooted in participatory action
@@ -227,7 +227,7 @@ const AboutPage = () => {
           <div className="flex items-center mb-8">
             <BookMarked className="h-8 w-8 text-blue-800 mr-3" />
             <h2 className="text-3xl font-bold text-blue-900">
-              UG & PG Courses Taught
+              UG and PG Courses Taught
             </h2>
           </div>
           <p className="text-gray-700 mb-6 italic text-xl">
@@ -302,7 +302,7 @@ const AboutPage = () => {
               <div className="flex items-center mb-8">
                 <Calendar className="h-8 w-8 text-blue-800 mr-3" />
                 <h2 className="text-3xl font-bold text-blue-900">
-                  News & Events
+                  News and Events
                 </h2>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm">
@@ -332,7 +332,9 @@ const AboutPage = () => {
             <div className="md:w-1/2 bg-gray-50 p-8 rounded-lg shadow-md">
               <div className="flex items-center mb-8">
                 <FileText className="h-8 w-8 text-blue-800 mr-3" />
-                <h2 className="text-3xl font-bold text-blue-900">Blog</h2>
+                <h2 className="text-3xl font-bold text-blue-900">
+                  Blogs
+                  </h2>
               </div>
               <p className="text-gray-700 mb-6 text-lg">
                 Dr. Somnath Ghosal and his team members regularly share

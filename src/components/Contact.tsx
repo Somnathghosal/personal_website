@@ -1,5 +1,6 @@
 import { Linkedin, Mail } from "lucide-react";
 import { Twitter, Youtube } from "lucide-react";
+import logo from "../assests/GL_Logo_4.jpg";
 // import VisitorCounter from "./VisitorCounter";
 
 const Contact = () => {
@@ -11,13 +12,14 @@ const Contact = () => {
 
           <div className="md:pr-12 flex flex-col items-center">
             <img
-              src="https://res.cloudinary.com/dq1llsy7f/image/upload/v1743854402/oymhfzlxj8k6glofetpn.jpg"
+              //src="https://res.cloudinary.com/dq1llsy7f/image/upload/v1743854402/oymhfzlxj8k6glofetpn.jpg"
+              src={logo}
               alt="GEAR - Geo-Action Research"
               className="h-28 max-h-full mb-4 mx-auto"
             />
             <h2 className="text-2xl md:text-3xl font-light italic mb-8 text-white text-center">
-              <span className="block">Ghosal</span>
-              <span className="block text-base lg:text-2xl">Participatory Action Research Group</span>
+              <span className="block font-semibold">Ghosal</span>
+              <span className="block text-base lg:text-2xl font-semibold">Participatory Geo-Action Research Group</span>
             </h2>
             <p className="text-blue-200 leading-relaxed text-base md:text-lg text-center">
               "Exploring innovative ideas and disseminating through technology
@@ -28,8 +30,8 @@ const Contact = () => {
           {/* Contact Information Section */}
           <div className="rounded-lg p-6 md:p-8 shadow-xl">
             <h1 className="text-2xl md:text-3xl font-bold text-center mb-4">Contact Us</h1>
-            <p className="text-base md:text-lg text-center text-blue-100">
-              Ghosal <br></br> Participatory Action Research Group
+            <p className="text-base md:text-lg text-center text-blue-100 font-semibold">
+              Ghosal <br></br> Participatory Geo-Action Research Group
             </p>
 
             <div className="text-center ">

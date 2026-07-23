@@ -155,6 +155,16 @@ const JournalPage = () => {
     {
       title: "Health and Public Policy",
       papers: [
+
+        
+
+        {
+          authors: "Hasan, M. S. and Ghosal, S.",
+          year: 2026,
+          title: "Social Networks, Social Support, and Loneliness among Older Urban Indians: A Mediation Analysis",
+          journal: "Humanities and Social Sciences Communications",
+          doi: "",
+        },
         {
           authors: "Hasan, M. S. and Ghosal, S.",
           year: 2026,
@@ -213,8 +223,8 @@ const JournalPage = () => {
           authors: "Ghosal, S., Ghosh, M. and Kumar, H.",
           year: 2026,
           title: "Human Interactions with Greeneries in an Indian Urban Environment: Exploring Determinants of Motivations and Constraints of City Dwellers' Interaction Towards Green Spaces",
-          journal: "Case Studies in the Environment",
-          doi: "",
+          journal: "Case Studies in the Environment, Vol. 10(1)",
+          doi: "10.1525/cse.2026.2722477",
         },
         {
           authors: "Ghosal, S. and Goswami, T.",
@@ -358,7 +368,7 @@ const JournalPage = () => {
           year: 2026,
           title: "Assessing the Dynamics and Characteristics of Urban Sprawl in the Patna Planning Area, Bihar, India: A Spatial Metrics Analysis",
           journal: "Journal of Earth System Science",
-          doi: "",
+          doi: "10.1007/s12040-026-02899-w",
         },
         {
           authors: "Kumar, H., Ghosh, M. and Ghosal, S.",
@@ -495,6 +505,8 @@ const JournalPage = () => {
           <AnimatedSection key={index} className="mb-12" delay={index * 0.2}>
             <h2 className="text-xl md:text-2xl font-semibold text-blue-800 mb-6">
               {category.title}
+              
+              
             </h2>
             <div className="space-y-6">
               {category.papers.map((paper, paperIndex) => (
@@ -506,11 +518,20 @@ const JournalPage = () => {
                   transition={{ duration: 0.5, delay: paperIndex * 0.1 }}
                   className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                 >
-                  <p className="text-base md:text-lg text-gray-800 mb-2">
-                    {paper.authors} ({paper.year}). {paper.title}
-                    <span className="italic">{paper.journal}</span>
+                  {/* <p className="text-base md:text-lg text-gray-800 mb-2">
+                    {paper.authors} ({paper.year}). {paper.title}.{" "}
+                    <span className="italic">{paper.journal}</span>,{" "}
                     {paper.details}.
+                  </p> */}
+
+
+                  <p className="text-base md:text-lg text-gray-800 mb-2">
+                    {paper.authors} ({paper.year}). {paper.title}.{" "}
+                    <span className="italic">{paper.journal}</span>
+                    {paper.details ? `, ${paper.details}.` : "."}
                   </p>
+
+
                   {paper.doi && (
                     <p className="text-blue-600">
                       DOI:{" "}
