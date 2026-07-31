@@ -146,7 +146,7 @@ const ProjectsComponent = () => {
         {
           title:
             "Sustainable Lake Operations",
-          period: "2026 – 2028",
+          period: "2026 – 2029",
           role: "Principal Investigator",
         },
 

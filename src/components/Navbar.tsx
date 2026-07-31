@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../assests/GL_Logo_4.jpg";
+import logo from "../assests/GEAR_Logo2.png"; // Update the path to your logo image
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -95,7 +95,7 @@ const Navbar = () => {
               //src="https://res.cloudinary.com/dq1llsy7f/image/upload/v1743854402/oymhfzlxj8k6glofetpn.jpg"
               src={logo}
               alt="GEAR - Geo-Action Research"
-              className="h-12 md:h-16 lg:h-20 max-h-full"
+              className="h-10 md:h-14 lg:h-18 max-h-full"
             />
             <span className="text-lg md:text-xl lg:text-2xl font-bold text-blue-700">
               Dr. Somnath Ghosal

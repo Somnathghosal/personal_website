@@ -121,7 +121,7 @@ const News = () => {
       </div>
 
       {/* Articles Grid */}
-      <div className="p-6 md:p-12 shadow-lg">
+      <div className="p-4 md:p-8 shadow-lg">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           initial="hidden"
@@ -149,7 +149,7 @@ const News = () => {
                 <img
                   src={article.img}
                   alt={article.alt}
-                  className="w-full h-[250px] md:h-[350px] lg:h-[400px] object-cover transition-transform transform hover:scale-105"
+                  className="w-full h-[200px] md:h-[250px] lg:h-[300px] object-cover transition-transform transform hover:scale-105"
                 />
               </div>
             </motion.div>

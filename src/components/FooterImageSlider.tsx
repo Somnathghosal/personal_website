@@ -224,25 +224,74 @@ const FooterImageSlider: React.FC<FooterImageSliderProps> = ({
 
 export default FooterImageSlider;
 
+
+
 const SmoothMarquee: React.FC<{
   slides: FooterSlide[];
   slidesToShow: number;
   heightClass: string;
   autoPlayInterval: number;
-}> = ({ slides, slidesToShow, autoPlayInterval, heightClass }) => {
-  const totalSlides = slides.length;
-  const durationSeconds = Math.max(
-    15,
-    (totalSlides / slidesToShow) * (autoPlayInterval / 300)
-  );
+}> = ({ slides, heightClass }) => {
+  const marqueeRef = useRef<HTMLDivElement>(null);
+
+  const animationFrameRef = useRef<number | null>(null);
+
+  const positionRef = useRef(0);
+
+  const isPausedRef = useRef(false);
+
+  const SPEED = 1; // increase/decrease for speed
+
+  useEffect(() => {
+    const marquee = marqueeRef.current;
+
+    if (!marquee) return;
+
+    const animate = () => {
+      if (!isPausedRef.current) {
+        positionRef.current += SPEED;
+
+        /*
+          Since we are duplicating the images,
+          when we reach half of the width we can
+          safely reset it back to zero.
+        */
+
+        const resetPoint = marquee.scrollWidth / 2;
+
+        if (positionRef.current >= resetPoint) {
+          positionRef.current = 0;
+        }
+
+        marquee.style.transform = `translateX(-${positionRef.current}px)`;
+      }
+
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
+
+    animationFrameRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="relative w-full overflow-hidden py-4">
       <div
-        className="flex animate-marquee gap-5 px-4"
+        ref={marqueeRef}
+        onMouseEnter={() => {
+          isPausedRef.current = true;
+        }}
+        onMouseLeave={() => {
+          isPausedRef.current = false;
+        }}
+        className="flex gap-5 px-4"
         style={{
-          animationDuration: `${durationSeconds}s`,
-          width: `${(totalSlides * 2 * 100) / slidesToShow}%`,
+          width: "max-content",
+          willChange: "transform",
         }}
       >
         {[...slides, ...slides].map((slide, idx) => (
@@ -260,25 +309,18 @@ const SmoothMarquee: React.FC<{
                   className="w-full h-full object-cover rounded-xl transition-transform duration-700 ease-out group-hover:scale-105 mx-auto"
                 />
               </div>
+
+              {slide.title && (
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white p-3 text-sm">
+                  <h3 className="font-medium">
+                    {slide.title}
+                  </h3>
+                </div>
+              )}
             </div>
           </div>
         ))}
       </div>
-
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-
-        .animate-marquee {
-          animation: marquee linear infinite;
-        }
-
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </div>
   );
 };

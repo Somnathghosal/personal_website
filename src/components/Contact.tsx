@@ -1,6 +1,6 @@
 import { Linkedin, Mail } from "lucide-react";
 import { Twitter, Youtube } from "lucide-react";
-import logo from "../assests/GL_Logo_4.jpg";
+import logo from "../assests/GEAR_Logo2.png"; // Update the path to your logo image
 // import VisitorCounter from "./VisitorCounter";
 
 const Contact = () => {

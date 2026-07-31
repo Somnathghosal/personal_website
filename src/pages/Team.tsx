@@ -68,6 +68,10 @@ const Team = () => {
       title: "Research Scholars",
       icon: <GraduationCap className="mr-2 text-blue-600" />,
       scholars: [
+        {
+          name: "Debkumar Singha (2026 - present)",
+          topic: "Impact of Social Media in Indigenous Life",
+        },
 
         {
           name: "Vijeta Kachhap (2026 – Present)",
