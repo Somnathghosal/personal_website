@@ -77,8 +77,9 @@ const FooterImageSlider: React.FC<FooterImageSliderProps> = ({
   slides,
   slidesToShow = 4,
   autoPlayInterval = 5000,
-  heightClass = "h-20 md:h-32 lg:h-32",
-  paddingYClass = "py-10",
+  //heightClass = "h-20 md:h-32 lg:h-32",
+  heightClass = "h-16 md:h-24 lg:h-24",
+  paddingYClass = "py-3 md:py-4",
   smooth = true,
 }) => {
   const [currentStartIndex, setCurrentStartIndex] = useState(0);
@@ -195,7 +196,7 @@ const FooterImageSlider: React.FC<FooterImageSliderProps> = ({
                 {getVisibleSlides().map((slide, index) => (
                   <div
                     key={`${currentStartIndex}-${index}`}
-                    className="group relative rounded-xl shadow-md bg-white overflow-hidden transform transition-all duration-500 hover:shadow-xl hover:-translate-y-1 max-w-[240px] w-full"
+                    className="group relative rounded-xl shadow-md bg-white overflow-hidden transform transition-all duration-500 hover:shadow-xl hover:-translate-y-1 max-w-[180px] w-full"
                   >
                     <div
                       className={`aspect-[1/1] w-full h-full ${heightClass} overflow-hidden flex items-center justify-center`}

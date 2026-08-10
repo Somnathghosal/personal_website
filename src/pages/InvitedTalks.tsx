@@ -142,8 +142,8 @@ const InvitedTalks = () => {
       className="flex flex-col min-h-screen"
     >
       {/* Sticky top header (hero + subheader) */}
-      <header className="sticky top-16 md:top-20 z-30">
-        <div className="relative h-20 md:h-28 flex items-center justify-center overflow-hidden">
+      <header>
+        <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
@@ -160,18 +160,22 @@ const InvitedTalks = () => {
             transition={{ duration: 0.8 }}
             className="relative text-center text-white px-4"
           >
-            <h1 className="text-2xl md:text-4xl font-bold mb-2 mt-5">Invited Talks</h1>
-            <div className="w-16 md:w-20 h-1 bg-blue-400 mx-auto mb-2"></div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Invited Talks</h1>
+            <div className="w-20 h-1 bg-blue-400 mx-auto"></div>
           </motion.div>
         </div>
 
-        <div className="text-center text-lg md:text-2xl py-3 font-bold text-blue-600 bg-gray-200">
-          <h2>Invited Talks and Presentations</h2>
+        <div className="bg-gray-100 py-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-blue-600">
+  Invited Talks and Presentations
+</h2>
+
+<div className="w-24 h-1 bg-blue-400 mx-auto mt-3"></div>
         </div>
       </header>
 
       {/* Scrollable middle content */}
-      <main className="flex-1 mt-4 md:mt-8 bg-gray-100 p-4 md:p-8 pb-10">
+      <main className="flex-1 bg-gray-100 p-4 md:p-8 pb-10">
         <ul className="max-w-4xl w-full mx-auto space-y-4">
           {invitedTalks.map((talk, index) => (
             <li key={index} className="p-4 bg-white shadow-md rounded-lg">
@@ -185,7 +189,7 @@ const InvitedTalks = () => {
       </main>
 
       {/* Bottom sections (Carousel) */}
-      <div className="bg-gray-100">
+      {/* <div className="bg-gray-100">
         <FooterImageSlider
           slides={slides}
           slidesToShow={talksSlidesToShow}
@@ -193,7 +197,17 @@ const InvitedTalks = () => {
           heightClass="h-28 md:h-44 lg:h-40"
           paddingYClass="py-4 md:py-6"
         />
-      </div>
+      </div> */}
+
+      <div className="sticky bottom-0 z-40 bg-white">
+  <FooterImageSlider
+    slides={slides}
+    slidesToShow={talksSlidesToShow}
+    autoPlayInterval={3000}
+    heightClass="h-28 md:h-34 lg:h-28"
+    paddingYClass="py-4 md:py-6"
+  />
+</div>
     </motion.div>
   );
 };

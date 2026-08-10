@@ -1,24 +1,61 @@
 import { useState, useEffect, useRef, MouseEvent } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../assests/GEAR_Logo2.png"; // Update the path to your logo image
+import logo from "../assests/G Logo 3.png";
 
 const Navbar = () => {
+  const location = useLocation();
+
+
+const isHome = location.pathname === "/";
+
+const isPublicationPage =
+  location.pathname === "/publication" ||
+  location.pathname.startsWith("/publication/") ||
+  location.pathname.startsWith("/publications/");
+
+const isMediaPage =
+  location.pathname === "/media" ||
+  location.pathname.startsWith("/media/");
+
+const isTransparentPage =
+  isHome || isPublicationPage || isMediaPage;
+
+
+// Only Home uses white text
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isResearchDropdownOpen, setIsResearchDropdownOpen] = useState(false);
+  const [isResearchDropdownOpen, setIsResearchDropdownOpen] =
+    useState(false);
   const [isMobileResearchDropdownOpen, setIsMobileResearchDropdownOpen] =
     useState(false);
+
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
+  // Transparent only on Home page
+const transparentNavbar = isTransparentPage && !isScrolled;
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+
+
+  useEffect(() => {
+  // Pages with permanent white navbar
+  if (!isTransparentPage) {
+    setIsScrolled(true);
+    return;
+  }
+
+  // Pages with transparent navbar initially
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 90);
+  };
+
+  handleScroll();
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [isTransparentPage]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent | any) => {
@@ -30,7 +67,11 @@ const Navbar = () => {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside as EventListener);
+    document.addEventListener(
+      "mousedown",
+      handleClickOutside as EventListener
+    );
+
     return () =>
       document.removeEventListener(
         "mousedown",
@@ -40,7 +81,6 @@ const Navbar = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-    // Reset dropdown state when toggling mobile menu
     setIsMobileResearchDropdownOpen(false);
   };
 
@@ -85,19 +125,34 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-2" : "bg-gray-100 py-4"
-        }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        transparentNavbar
+          ? "bg-transparent py-4"
+          : "bg-white shadow-md py-2"
+      }`}
     >
-      <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 ">
+      <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24">
         <div className="flex justify-between items-center">
+
+          {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img
-              //src="https://res.cloudinary.com/dq1llsy7f/image/upload/v1743854402/oymhfzlxj8k6glofetpn.jpg"
               src={logo}
-              alt="GEAR - Geo-Action Research"
-              className="h-10 md:h-14 lg:h-18 max-h-full"
+              alt="GEAR Logo"
+              className={`transition-all duration-500 ${
+                transparentNavbar
+                  ? "h-12 md:h-14 lg:h-16"
+                  : "h-10 md:h-12 lg:h-14"
+              }`}
             />
-            <span className="text-lg md:text-xl lg:text-2xl font-bold text-blue-700">
+
+            <span
+              className={`text-lg md:text-xl lg:text-2xl font-bold transition-colors duration-500 ${
+                transparentNavbar
+                  ? "text-white"
+                  : "text-blue-700"
+              }`}
+            >
               Dr. Somnath Ghosal
             </span>
           </Link>
@@ -112,23 +167,31 @@ const Navbar = () => {
               >
                 {item.hasDropdown ? (
                   <div className="flex items-center">
+
                     <Link
                       to={item.path}
-                      className="text-blue-700 hover:text-blue-800 transition-colors duration-200 font-medium py-2 px-3 hover:bg-blue-50 rounded"
+                      className={`font-medium py-2 px-3 rounded transition-all duration-500 ${
+                        transparentNavbar
+                          ? "text-white hover:text-gray-200"
+                          : "text-blue-700 hover:text-blue-800 hover:bg-blue-50"
+                      }`}
                     >
                       {item.name}
                     </Link>
+
                     <button
                       onClick={toggleResearchDropdown}
-                      className="text-blue-700 hover:text-blue-800 ml-1 p-1 hover:bg-blue-50 rounded-full focus:outline-none"
-                      aria-expanded={isResearchDropdownOpen}
-                      aria-haspopup="true"
-                      aria-label="Toggle research dropdown"
+                      className={`ml-1 p-1 rounded-full transition-all duration-500 ${
+                        transparentNavbar
+                          ? "text-white hover:bg-white/10"
+                          : "text-blue-700 hover:bg-blue-50"
+                      }`}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className={`h-4 w-4 transition-transform ${isResearchDropdownOpen ? "rotate-180" : ""
-                          }`}
+                        className={`h-4 w-4 transition-transform ${
+                          isResearchDropdownOpen ? "rotate-180" : ""
+                        }`}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -141,25 +204,35 @@ const Navbar = () => {
                         />
                       </svg>
                     </button>
+
                     {isResearchDropdownOpen && item.subItems && (
                       <div className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-md overflow-hidden w-48 z-20">
+
                         {item.subItems.map((subItem) => (
                           <Link
                             key={subItem.name}
                             to={subItem.path}
                             className="block px-4 py-3 text-blue-700 hover:bg-blue-50 font-medium"
-                            onClick={() => setIsResearchDropdownOpen(false)}
+                            onClick={() =>
+                              setIsResearchDropdownOpen(false)
+                            }
                           >
                             {subItem.name}
                           </Link>
                         ))}
+
                       </div>
                     )}
+
                   </div>
                 ) : (
                   <Link
                     to={item.path}
-                    className="text-blue-700 hover:text-blue-800 transition-colors duration-200 font-medium py-2 px-3 hover:bg-blue-50 rounded"
+                    className={`font-medium py-2 px-3 rounded transition-all duration-500 ${
+                      transparentNavbar
+                        ? "text-white hover:text-gray-200"
+                        : "text-blue-700 hover:text-blue-800 hover:bg-blue-50"
+                    }`}
                   >
                     {item.name}
                   </Link>
@@ -167,11 +240,14 @@ const Navbar = () => {
               </div>
             ))}
           </div>
-
-          {/* Mobile Menu Button */}
+                    {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
-              className="text-gray-700 p-2 rounded-md hover:bg-blue-50"
+              className={`p-2 rounded-md transition-all duration-500 ${
+                transparentNavbar
+                  ? "text-white"
+                  : "text-gray-700 hover:bg-blue-50"
+              }`}
               onClick={toggleMobileMenu}
               aria-label="Toggle mobile menu"
             >
@@ -215,37 +291,76 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <div key={item.name} className="relative">
                   {item.hasDropdown ? (
-                    <div className="flex items-center justify-between px-4 py-3">
-                      <Link
-                        to={item.path}
-                        className="text-blue-700 hover:text-blue-800 font-medium"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                      <button
-                        onClick={toggleMobileResearchDropdown}
-                        className="text-blue-700 hover:bg-blue-50 p-1 rounded-full focus:outline-none"
-                        aria-expanded={isMobileResearchDropdownOpen}
-                        aria-label="Toggle research dropdown"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className={`h-4 w-4 transition-transform ${isMobileResearchDropdownOpen ? "rotate-180" : ""
-                            }`}
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
+                    <>
+                      <div className="flex items-center justify-between px-4 py-3">
+                        <Link
+                          to={item.path}
+                          className="text-blue-700 hover:text-blue-800 font-medium"
+                          onClick={() => setIsMobileMenuOpen(false)}
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </button>
-                    </div>
+                          {item.name}
+                        </Link>
+
+                        <button
+                          onClick={toggleMobileResearchDropdown}
+                          className="text-blue-700 hover:bg-blue-50 p-1 rounded-full transition-all duration-300"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className={`h-4 w-4 transition-transform ${
+                              isMobileResearchDropdownOpen
+                                ? "rotate-180"
+                                : ""
+                            }`}
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+
+                      <AnimatePresence>
+                        {isMobileResearchDropdownOpen &&
+                          item.subItems && (
+                            <motion.div
+                              initial={{
+                                opacity: 0,
+                                height: 0,
+                              }}
+                              animate={{
+                                opacity: 1,
+                                height: "auto",
+                              }}
+                              exit={{
+                                opacity: 0,
+                                height: 0,
+                              }}
+                              className="bg-blue-50 overflow-hidden"
+                            >
+                              {item.subItems.map((subItem) => (
+                                <Link
+                                  key={subItem.name}
+                                  to={subItem.path}
+                                  className="block px-8 py-3 text-blue-700 hover:bg-blue-100 font-medium"
+                                  onClick={() => {
+                                    setIsMobileMenuOpen(false);
+                                    setIsMobileResearchDropdownOpen(false);
+                                  }}
+                                >
+                                  {subItem.name}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                      </AnimatePresence>
+                    </>
                   ) : (
                     <Link
                       to={item.path}
@@ -255,33 +370,6 @@ const Navbar = () => {
                       {item.name}
                     </Link>
                   )}
-
-                  {/* Mobile Dropdown Items */}
-                  <AnimatePresence>
-                    {item.hasDropdown &&
-                      isMobileResearchDropdownOpen &&
-                      item.subItems && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          className="bg-blue-50 overflow-hidden"
-                        >
-                          {item.subItems.map((subItem) => (
-                            <Link
-                              key={subItem.name}
-                              to={subItem.path}
-                              className="block px-8 py-3 text-blue-700 hover:bg-blue-100 font-medium"
-                              onClick={() => {
-                                setIsMobileMenuOpen(false);
-                              }}
-                            >
-                              {subItem.name}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                  </AnimatePresence>
                 </div>
               ))}
             </motion.div>

@@ -82,7 +82,7 @@ const Books = () => {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
+      <div className="relative h-[40vh] md:h-[45vh] overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -97,7 +97,7 @@ const Books = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative text-center text-white px-4"
+          className="relative z-10 flex h-full items-center justify-center pt-20 md:pt-16 text-center text-white px-4"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-4">BOOK</h1>
           <div className="w-20 h-1 bg-blue-400 mx-auto mb-4"></div>

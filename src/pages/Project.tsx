@@ -391,11 +391,15 @@ const ProjectsComponent = () => {
           </div>
         </div>
       </div>
-      <FooterImageSlider
-        slides={slides}
-        slidesToShow={projectsSlidesToShow}
-        autoPlayInterval={3000}
-      />
+      <div className="sticky bottom-0 z-40 bg-white">
+  <FooterImageSlider
+    slides={slides}
+    slidesToShow={projectsSlidesToShow}
+    autoPlayInterval={3000}
+    heightClass="h-28 md:h-34 lg:h-28"
+    paddingYClass="py-4 md:py-6"
+  />
+</div>
     </motion.div>
   );
 };

@@ -35,11 +35,20 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mt-10 mt-16 leading-relaxed">
-              Ghosal <br />
-              <span className="text-3xl md:text-4xl lg:text-5xl font-bold">
-                Participatory Geo-Action Research Group
-              </span>
+            <h1 className="font-bold text-white mb-4 md:mt-10 mt-16">
+
+              <div className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl leading-tight">
+                Ghosal
+              </div>
+            
+              <div className="mt-3 text-2xl sm:text-4xl md:text-4xl lg:text-5xl leading-tight">
+                Participatory&nbsp;Geo-Action
+              </div>
+            
+              <div className="text-2xl sm:text-4xl md:text-4xl lg:text-5xl leading-tight">
+                Research&nbsp;Group
+              </div>
+            
             </h1>
 
             <div className="w-24 h-1 bg-blue-400 mx-auto my-6"></div>

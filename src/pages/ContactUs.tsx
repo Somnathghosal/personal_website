@@ -2,7 +2,7 @@ import { useState, ChangeEvent, FormEvent, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-import logo from "../assests/GEAR_Logo2.png"; // Update the path to your logo image
+import logo from "../assests/G Logo 3.png"; // Update the path to your logo image
 import { Linkedin, Mail, Twitter, Youtube } from "lucide-react";
 const ContactUs = () => {
   const form = useRef<HTMLFormElement>(null);

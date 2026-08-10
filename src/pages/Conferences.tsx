@@ -429,8 +429,8 @@ const Conferences = () => {
       className="flex flex-col min-h-screen"
     >
       {/* Sticky header (hero + title) */}
-      <header className="sticky top-16 md:top-20 z-30">
-        <div className="relative h-20 md:h-28 flex items-center justify-center overflow-hidden">
+      <header className="relative">
+        <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
@@ -447,38 +447,38 @@ const Conferences = () => {
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="relative text-center text-white px-4"
           >
-            <h1 className="text-2xl md:text-4xl font-bold mb-0 mt-5">Conferences</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Conferences</h1>
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.5 }}
-              className="w-16 md:w-20 h-1 bg-blue-400 mx-auto mb-2"
+              className="w-20 h-1 bg-blue-400 mx-auto"
             ></motion.div>
           </motion.div>
         </div>
 
-        <div className="text-center py-3 bg-gray-100">
+        <div className="bg-gray-100 py-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center mb-0 px-4"
+            className="text-center px-4"
           >
-            <h1 className="text-lg md:text-2xl font-bold text-blue-600">
+            <h1 className="text-2xl md:text-4xl font-bold text-blue-600">
               List of Conferences, Seminars, and Workshops (Participated)
             </h1>
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.5 }}
-              className="w-20 md:w-24 h-1 bg-blue-400 mx-auto mt-2"
+              className="w-24 h-1 bg-blue-400 mx-auto mt-3"
             ></motion.div>
           </motion.div>
         </div>
       </header>
 
       {/* Scrollable content area */}
-      <main className="flex-1 mt-4 md:mt-8 bg-gray-100 p-4 md:p-6 pb-10">
+      <main className="flex-1 bg-gray-100 p-4 md:p-6 pb-10">
         <ul className="max-w-4xl mx-auto space-y-6">
           {conferences.map((conference, index) => (
             <motion.li
@@ -516,7 +516,7 @@ const Conferences = () => {
       </main>
 
       {/* Bottom sections (Carousel) */}
-      <div className="bg-gray-100">
+      {/* <div className="bg-gray-100">
         <FooterImageSlider
           slides={slides}
           slidesToShow={confSlidesToShow}
@@ -524,7 +524,20 @@ const Conferences = () => {
           heightClass="h-28 md:h-44 lg:h-40"
           paddingYClass="py-4 md:py-6"
         />
-      </div>
+      </div> */}
+
+      
+      <div className="sticky bottom-0 z-40 bg-white">
+  <FooterImageSlider
+    slides={slides}
+    slidesToShow={confSlidesToShow}
+    autoPlayInterval={3000}
+    heightClass="h-28 md:h-34 lg:h-28"
+    paddingYClass="py-4 md:py-6"
+  />
+</div>
+
+
     </motion.div>
   );
 };

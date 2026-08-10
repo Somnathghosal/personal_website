@@ -1,6 +1,6 @@
 import { Linkedin, Mail } from "lucide-react";
 import { Twitter, Youtube } from "lucide-react";
-import logo from "../assests/GEAR_Logo2.png"; // Update the path to your logo image
+import logo from "../assests/G Logo 3.png"; // Update the path to your logo image
 // import VisitorCounter from "./VisitorCounter";
 
 const Contact = () => {
@@ -15,9 +15,9 @@ const Contact = () => {
               //src="https://res.cloudinary.com/dq1llsy7f/image/upload/v1743854402/oymhfzlxj8k6glofetpn.jpg"
               src={logo}
               alt="GEAR - Geo-Action Research"
-              className="h-28 max-h-full mb-4 mx-auto"
+              className="h-24 max-h-full mb-4 mx-auto"
             />
-            <h2 className="text-2xl md:text-3xl font-light italic mb-8 text-white text-center">
+            <h2 className="text-2xl md:text-3xl font-light  mb-8 text-white text-center">
               <span className="block font-semibold">Ghosal</span>
               <span className="block text-base lg:text-2xl font-semibold">Participatory Geo-Action Research Group</span>
             </h2>
