@@ -164,15 +164,15 @@ const InvitedTalks = () => {
             <div className="w-20 h-1 bg-blue-400 mx-auto"></div>
           </motion.div>
         </div>
-
-        <div className="bg-gray-100 py-6">
-          <h2 className="text-2xl md:text-4xl font-bold text-blue-600">
-  Invited Talks and Presentations
-</h2>
-
-<div className="w-24 h-1 bg-blue-400 mx-auto mt-3"></div>
-        </div>
       </header>
+        <div className="bg-gray-100 py-6 text-center">
+  <h2 className="text-2xl md:text-4xl font-bold text-blue-600">
+    Invited Talks and Presentations
+  </h2>
+</div>
+      
+
+      
 
       {/* Scrollable middle content */}
       <main className="flex-1 bg-gray-100 p-4 md:p-8 pb-10">
