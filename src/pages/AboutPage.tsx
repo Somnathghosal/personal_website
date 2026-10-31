@@ -1,13 +1,29 @@
-import { BookMarked, Calendar, FileText } from "lucide-react";
+import { BookMarked, Calendar, FileText, PlayCircle } from "lucide-react";
 import { motion } from "framer-motion";
 // import { FooterVideo } from "../components/FooterImageSlider";
+import professorVideo from "../assests/Geo-Action_Lab_Video.mp4";
 
 const AboutPage = () => {
   // Blog posts data array for cleaner rendering
 
   // Function to navigate to blog post page
   const newsAndEvents = [
+     {
+      
+
+      id: 25,
+      date: "Sept - Oct 2026",
+      event: "Prof. Ghosal visited School of Geography and the Environment (SoGE), University of Oxford, UK as a Research Associate.",
+    },
+     {
+      
+      id: 24,
+      date: "September 2026",
+      event: "Prof. Ghosal visited Centre for Rural Economy (CRE), Newcastle University, UK as a Visiting Professor.",
+    },
     {
+      
+
       id: 23,
       date: "25th March 2026",
       event: "Prof. Ghosal has become Vice President and Council Member of ISERD, Tokyo, Japan.",
@@ -216,7 +232,42 @@ const AboutPage = () => {
               </div>
             </motion.div>
           </div>
-        </div>
+                </div>
+
+        {/* Featured Video Section */}
+<div className="max-w-6xl mx-auto mb-16">
+  <div className="bg-gray-50 p-8 rounded-lg shadow-md">
+
+    {/* Section Heading */}
+    <div className="flex items-center mb-4">
+      <PlayCircle className="h-7 w-7 text-blue-800 mr-3" />
+
+      <h2 className="text-3xl font-bold text-blue-900">
+        Featured Video
+      </h2>
+    </div>
+
+    {/* Description */}
+    <p className="text-gray-700 mb-5 text-lg">
+      {/* Explore more about Dr. Somnath Ghosal's work, research, and
+      contributions to sustainable rural development. */}
+      "Empowering Communities: The Participatory Action Research" by Dr. Somnath Ghosal 
+    </p>
+
+    {/* Video */}
+    <div className="w-full max-w-4xl mx-auto aspect-video overflow-hidden rounded-xl shadow-lg bg-black">
+      <video
+        className="w-full h-full object-cover"
+        controls
+        preload="metadata"
+      >
+        <source src={professorVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+  </div>
+</div>
 
         {/* Events Section */}
 

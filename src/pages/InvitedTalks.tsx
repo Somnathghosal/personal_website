@@ -5,6 +5,18 @@ import FooterImageSlider from "../components/FooterImageSlider";
 const invitedTalks = [
   {
     title:
+      "Local Knowledge, Collective Action, and Rural Futures: Insights from Participatory Research",
+    event: "University of Oxford, UK",
+    date: "8th October, 2026",
+  },
+  {
+    title:
+      "Voices, Participation, and Change: From Knowledge to Reflection",
+    event: "Newcastle University, UK",
+    date: "23rd September, 2026",
+  },
+  {
+    title:
       "Forest and Biodiversity Management with Focus on Role of Participatory Methods",
     event: "TATA Steel Foundation",
     date: "7th February, 2025",

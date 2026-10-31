@@ -6,7 +6,13 @@ import Img2 from "../assests/img2.jpg";
 
 const conferences = [
   {
-    name: "17th International Conference on “Environment and Rural Development",
+    name: "International Social Science Conclave 2026 on “Inclusive Development, Social Justice and Climate Resilience”",
+    location: "Vidyasagar University, Midnapore",
+    date: "8th – 9th September, 2026",
+    presentationTitle: "Technology for Rural Transformation: Transfer, Adoption, and Management",
+  },
+  {
+    name: "17th International Conference on “Environment and Rural Development“",
     location: "Royal University of Agriculture, Phnom Penh, Cambodia",
     date: "26th – 29th March 2026",
     presentationTitle: "Education for Sustainable Rural Development: Empowering Indigenous Communities Through School-based Safe Potable Water Intervention",
@@ -25,7 +31,7 @@ const conferences = [
     role: "Chairing Thematic Session",
   },
   {
-    name: "International Symposium on “Climate Change, Disasters, and Adaptation",
+    name: "International Symposium on “Climate Change, Disasters, and Adaptation“",
     location: "Mizoram University, Aizawl",
     date: "11th December 2025",
     role: "Guest of Honour",
