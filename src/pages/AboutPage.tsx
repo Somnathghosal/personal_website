@@ -1,7 +1,7 @@
 import { BookMarked, Calendar, FileText, PlayCircle } from "lucide-react";
 import { motion } from "framer-motion";
 // import { FooterVideo } from "../components/FooterImageSlider";
-import professorVideo from "../assests/Geo-Action_Lab_Video.mp4";
+
 
 const AboutPage = () => {
   // Blog posts data array for cleaner rendering
@@ -235,9 +235,9 @@ const AboutPage = () => {
                 </div>
 
         {/* Featured Video Section */}
+{/* Featured Video Section */}
 <div className="max-w-6xl mx-auto mb-16">
   <div className="bg-gray-50 p-8 rounded-lg shadow-md">
-
     {/* Section Heading */}
     <div className="flex items-center mb-4">
       <PlayCircle className="h-7 w-7 text-blue-800 mr-3" />
@@ -249,26 +249,22 @@ const AboutPage = () => {
 
     {/* Description */}
     <p className="text-gray-700 mb-5 text-lg">
-      {/* Explore more about Dr. Somnath Ghosal's work, research, and
-      contributions to sustainable rural development. */}
-      "Empowering Communities: The Participatory Action Research" by Dr. Somnath Ghosal 
+      "Empowering Communities: The Participatory Action Research" by Dr. Somnath Ghosal
     </p>
 
-    {/* Video */}
+    {/* YouTube Video */}
     <div className="w-full max-w-4xl mx-auto aspect-video overflow-hidden rounded-xl shadow-lg bg-black">
-      <video
-        className="w-full h-full object-cover"
-        controls
-        preload="metadata"
-      >
-        <source src={professorVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <iframe
+        className="w-full h-full"
+        src="https://www.youtube.com/embed/BD_qccaf_p8?si=qcgeozPZDiU2dJHy"
+        title="Empowering Communities: The Participatory Action Research by Dr. Somnath Ghosal"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+      />
     </div>
-
   </div>
 </div>
-
         {/* Events Section */}
 
         {/* Awards Section */}

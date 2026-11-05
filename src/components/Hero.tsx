@@ -1,404 +1,171 @@
-
-
-
 import { motion } from "framer-motion";
 
+const focusAreas = [
+  "Public Policy, Planning, and Development",
+  "Community Participation for Action Research",
+  "Science and Public Policy Integration",
+  "Skill Development for Livelihood Generation",
+  "Rural Infrastructure Planning and Development (Drinking Water, Health, and Education)",
+  "Social Forestry and Natural Resource-Based Entrepreneurship",
+  "Ethnographic, Qualitative, and Archival Research",
+];
+
+const backgroundImage =
+  "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743765121/cemke1rafuaoqewwjmhi.jpg";
+
+const easing = [0.22, 1, 0.36, 1];
+
 const Hero = () => {
-  const focusAreas = [
-    "Public Policy, Planning, and Development",
-    "Community Participation for Action Research",
-    "Science and Public Policy Integration",
-    "Skill Development for Livelihood Generation",
-    "Rural Infrastructure Planning and Development (Drinking Water, Health, and Education)",
-    "Social Forestry and Natural Resource-Based Entrepreneurship",
-    "Ethnographic, Qualitative, and Archival Research",
-  ];
-
   return (
-    <main className="w-full overflow-hidden bg-[#f7f7f5]">
-
-      {/* =====================================================
-          LANDING / HERO VIEWPORT
-      ===================================================== */}
-      <section className="relative min-h-screen w-full overflow-hidden bg-[#111820]">
-
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img
-            // src="https://res.cloudinary.com/dq1llsy7f/image/upload/v1743765121/cemke1rafuaoqewwjmhi.jpg"
-            src="https://images.pexels.com/photos/8814563/pexels-photo-8814563.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-            alt="Rural landscape and community"
-            className="
-              h-full
-              w-full
-              object-cover
-              object-center
-            "
-          />
-
-          {/* Overall subtle darkening */}
-          <div className="absolute inset-0 bg-black/20" />
-
-          {/* Left-side readability */}
-          <div
-            className="
-              absolute
-              inset-0
-              bg-gradient-to-r
-              from-[#0c1218]/70
-              via-[#0c1218]/35
-              to-transparent
-            "
-          />
-
-          {/* Bottom atmospheric fade */}
-          <div
-            className="
-              absolute
-              inset-x-0
-              bottom-0
-              h-48
-              bg-gradient-to-t
-              from-black/50
-              to-transparent
-            "
-          />
-        </div>
-
-
-        {/* =================================================
-            HERO CONTENT
-        ================================================= */}
-        <div className="relative z-10 flex min-h-screen items-center justify-center">
-
-          <div
-            className="
-              w-full
-              px-6
-              pb-16
-              pt-24
-              sm:px-10
-              lg:px-16
-            "
-          >
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 1,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="
-                mx-auto
-                flex
-                max-w-6xl
-                flex-col
-                items-center
-                text-center
-              "
-            >
-
-              {/* =================================================
-                  SMALL TOP LABEL
-              ================================================= */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.7,
-                  delay: 0.15,
-                }}
-                className="
-                  mb-7
-                  flex
-                  items-center
-                  justify-center
-                  gap-4
-                "
-              >
-                <span className="h-px w-10 bg-blue-400" />
-
-                <span
-                  className="
-                    text-[10px]
-                    font-medium
-                    uppercase
-                    tracking-[0.3em]
-                    text-white/70
-                    sm:text-xs
-                  "
-                >
-                  Participatory Geo-Action Research
-                </span>
-
-                <span className="h-px w-10 bg-blue-400" />
-              </motion.div>
-
-
-              {/* =================================================
-                  MAIN TITLE
-              ================================================= */}
-              <motion.h1
-                initial={{ opacity: 0, y: 25 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.9,
-                  delay: 0.25,
-                }}
-                className="
-                  font-bold
-                  leading-[0.95]
-                  tracking-[-0.045em]
-                "
-              >
-
-                {/* Ghosal */}
-                <span
-                  className="
-                    block
-                    text-white
-                    text-[clamp(4rem,8vw,7.5rem)]
-                  "
-                >
-                  Ghosal
-                </span>
-
-
-                {/* Participatory Geo-Action */}
-                <span
-                  className="
-                    mt-3
-                    block
-                    text-[#8eace6]
-                    text-[clamp(2.25rem,5vw,5rem)]
-                  "
-                >
-                  Participatory Geo-Action
-                </span>
-
-
-                {/* Research Group */}
-                <span
-                  className="
-                    mt-2
-                    block
-                    text-white
-                    text-[clamp(2.25rem,5vw,5rem)]
-                  "
-                >
-                  Research Group
-                </span>
-
-              </motion.h1>
-
-
-              {/* =================================================
-                  ACCENT LINE
-              ================================================= */}
-              <motion.div
-                initial={{ width: 0, opacity: 0 }}
-                animate={{ width: 72, opacity: 1 }}
-                transition={{
-                  duration: 0.7,
-                  delay: 0.65,
-                }}
-                className="
-                  mt-8
-                  h-[2px]
-                  bg-blue-400
-                "
-              />
-
-
-              {/* =================================================
-                  TAGLINES
-              ================================================= */}
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.8,
-                }}
-                className="
-                  mt-7
-                  w-full
-                  max-w-6xl
-                "
-              >
-
-                {/* First tagline */}
-                <p
-                  className="
-                    whitespace-normal
-                    text-base
-                    leading-relaxed
-                    text-white/95
-                    sm:text-lg
-                    lg:whitespace-nowrap
-                    lg:text-xl
-                    xl:text-2xl
-                  "
-                >
-                  "Empowering Rural Communities Through Participatory Action
-                  Research"
-                </p>
-
-
-                {/* Second tagline */}
-                <p
-                  className="
-                    mt-4
-                    text-sm
-                    leading-relaxed
-                    text-white/65
-                    sm:text-base
-                    lg:text-lg
-                  "
-                >
-                  "Exploring Rural Landscapes, Shaping Sustainable Futures"
-                </p>
-
-              </motion.div>
-
-            </motion.div>
-
-          </div>
-        </div>
-
-      </section>
-
-
-      {/* =====================================================
-          RESEARCH FOCUS AREAS
-      ===================================================== */}
+    <main className="w-full overflow-hidden bg-black">
+      {/* =================================================
+          HERO SECTION
+      ================================================= */}
       <section
-        id="research-focus"
-        className="
-          min-h-screen
-          bg-[#f7f7f5]
-          text-[#172033]
-        "
+        className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black"
+        style={{
+          backgroundImage: "url('https://images.pexels.com/photos/8814563/pexels-photo-8814563.jpeg?auto=compress&cs=tinysrgb&h=650&w=940')",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
       >
+        {/* Subtle dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/45" />
 
-        <div
-          className="
-            mx-auto
-            flex
-            min-h-screen
-            max-w-[1500px]
-            flex-col
-            justify-center
-            px-6
-            py-16
-            sm:px-10
-            sm:py-14
-            lg:px-16
-            lg:py-16
-          "
-        >
+        {/* Black vignette */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.65)_100%)]" />
 
-          {/* =================================================
-              SECTION HEADER
-          ================================================= */}
+        {/* Bottom fade */}
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-black" />
+
+        <div className="relative z-10 mx-auto w-full max-w-[1500px] px-5 py-24 text-center sm:px-8 lg:px-12">
+          {/* Top label */}
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{
-              once: true,
-              amount: 0.3,
-            }}
-            transition={{
-              duration: 0.7,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="
-              mb-8
-              flex
-              items-end
-              justify-between
-              gap-8
-              sm:mb-10
-            "
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: easing }}
+            className="mb-7 flex items-center justify-center gap-4"
           >
-
-            <div>
-
-              {/* Small label */}
-              <div className="mb-3 flex items-center gap-3">
-
-                <span className="h-px w-8 bg-[#2455c3]" />
-
-                <span
-                  className="
-                    text-[9px]
-                    font-semibold
-                    uppercase
-                    tracking-[0.25em]
-                    text-[#2455c3]
-                    sm:text-[10px]
-                  "
-                >
-                  Research
-                </span>
-
-              </div>
-
-
-              {/* Heading */}
-              <h2
-                className="
-                  text-[clamp(2.5rem,5vw,4.8rem)]
-                  font-semibold
-                  leading-[0.9]
-                  tracking-[-0.045em]
-                  text-[#172033]
-                "
-              >
-                Research{" "}
-                <span className="text-[#2455c3]">
-                  Focus Areas
-                </span>
-              </h2>
-
-            </div>
-
-
-            {/* Desktop description */}
-            <p
-              className="
-                hidden
-                max-w-sm
-                text-right
-                text-sm
-                leading-relaxed
-                text-[#697386]
-                lg:block
-              "
-            >
-              Areas of research spanning public policy,
-              community participation, rural development,
-              infrastructure, natural resources, and
-              qualitative inquiry.
-            </p>
-
+            <span className="h-px w-8 bg-[#8eace6] sm:w-12" />
+            <span className="text-[10px] font-medium uppercase tracking-[0.24em] text-[#8eace6] sm:text-xs">
+              Participatory Geo-Action Research
+            </span>
+            <span className="h-px w-8 bg-[#8eace6] sm:w-12" />
           </motion.div>
 
+          {/* Main title */}
+          <motion.h1
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.12, ease: easing }}
+            className="mx-auto max-w-6xl text-4xl font-semibold leading-[1.08] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+          >
+            <span className="block">Ghosal</span>
+            <span className="block text-[#8eace6]">
+              Participatory Geo-Action
+            </span>
+            <span className="block">Research Group</span>
+          </motion.h1>
 
-          {/* =================================================
-              RESEARCH LIST
-          ================================================= */}
-          <div className="border-t border-[#d8dadd]">
+          {/* Accent line */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.7, delay: 0.45, ease: easing }}
+            className="mx-auto mt-8 h-[2px] w-16 bg-[#6f96e8] sm:w-20"
+          />
 
+          {/* Taglines */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.55, ease: easing }}
+            className="mt-7 space-y-4"
+          >
+            <p className="mx-auto max-w-5xl text-base font-normal leading-relaxed text-white sm:text-lg md:text-xl lg:whitespace-nowrap lg:text-2xl">
+              "Empowering Rural Communities Through Participatory Action Research"
+            </p>
+
+            <p className="mx-auto max-w-4xl text-sm leading-relaxed text-white/75 sm:text-base md:text-lg">
+              "Exploring Rural Landscapes, Shaping Sustainable Futures"
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* =================================================
+          RESEARCH FOCUS AREAS
+      ================================================= */}
+      <section
+        id="research-focus"
+        className="relative isolate overflow-hidden bg-black text-white"
+      >
+        {/* Background image */}
+        <div
+          className="absolute inset-0 -z-20 bg-cover bg-center"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        />
+
+        {/* Subtle image darkening */}
+        <div className="absolute inset-0 -z-10 bg-black/45" />
+
+        {/* Restrained black vignette around the image */}
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(0,0,0,0.7)_100%)]" />
+
+        {/* Soft transition at the top, without a hard section boundary */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/80 to-transparent" />
+
+        <div className="mx-auto w-full max-w-[1600px] px-5 pb-12 pt-14 sm:px-8 sm:pb-16 sm:pt-16 lg:px-12 lg:pb-20 lg:pt-20">
+          {/* Section heading */}
+          <div className="mb-0 border-b border-white/20 pb-0">
+            <div className="lg:col-span-8">
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.65, ease: easing }}
+                className="mb-5 flex items-center gap-3"
+              >
+                <span className="h-px w-8 bg-[#8eace6] sm:w-10" />
+                <span className="text-[10px] font-medium uppercase tracking-[0.24em] text-[#8eace6] sm:text-xs">
+                  Research
+                </span>
+              </motion.div>
+
+              <motion.h2
+                initial={{ opacity: 0, y: 25, filter: "blur(4px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.75, ease: easing }}
+                className="text-4xl font-medium leading-[1.05] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl lg:text-7xl"
+              >
+                Research{" "}
+                <span className="text-[#8eace6]">Focus Areas</span>
+              </motion.h2>
+            </div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.65, delay: 0.1, ease: easing }}
+              className="max-w-xl text-sm leading-6 text-white/75 lg:col-span-4 lg:justify-self-end lg:text-right"
+            >
+              Areas of research spanning public policy, community participation,
+              rural development, infrastructure, natural resources, and
+              qualitative inquiry.
+            </motion.p>
+          </div>
+
+          {/* Research list */}
+          <div >
             {focusAreas.map((area, index) => (
-
               <motion.div
                 key={area}
                 initial={{
                   opacity: 0,
-                  y: 35,
-                  filter: "blur(5px)",
+                  y: 25,
+                  filter: "blur(4px)",
                 }}
                 whileInView={{
                   opacity: 1,
@@ -407,118 +174,42 @@ const Hero = () => {
                 }}
                 viewport={{
                   once: true,
-                  amount: 0.65,
+                  amount: 0.35,
                 }}
                 transition={{
                   duration: 0.65,
                   delay: index * 0.04,
-                  ease: [0.22, 1, 0.36, 1],
+                  ease: easing,
                 }}
-                className="
-                  group
-                  border-b
-                  border-[#d8dadd]
-                "
+                className="group border-b border-white/20"
               >
-
-                <div
-                  className="
-                    flex
-                    min-h-[8.2vh]
-                    items-center
-                    gap-4
-                    py-3
-                    sm:min-h-[8.5vh]
-                    sm:gap-6
-                    sm:py-3
-                    lg:min-h-[8.7vh]
-                    lg:gap-8
-                  "
-                >
-
+                <div className="flex min-h-[8.2vh] items-center gap-4 py-4 sm:min-h-[8.5vh] sm:gap-6 lg:min-h-[8.7vh] lg:gap-8">
                   {/* Number */}
-                  <div
-                    className="
-                      w-8
-                      shrink-0
-                      sm:w-12
-                      lg:w-16
-                    "
-                  >
-                    <span
-                      className="
-                        text-[9px]
-                        font-medium
-                        tracking-[0.15em]
-                        text-[#9aa0aa]
-                        transition-colors
-                        duration-300
-                        group-hover:text-[#2455c3]
-                        sm:text-[10px]
-                        lg:text-xs
-                      "
-                    >
+                  <div className="w-8 shrink-0 sm:w-12 lg:w-16">
+                    <span className="text-[9px] font-medium tracking-[0.15em] text-white/55 transition-colors duration-300 group-hover:text-[#8eace6] sm:text-[10px] lg:text-xs">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
 
-
-                  {/* Research Topic */}
+                  {/* Topic */}
                   <div className="min-w-0 flex-1">
-
-                    <h3
-                      className="
-                        text-[clamp(0.95rem,1.7vw,1.55rem)]
-                        font-medium
-                        leading-tight
-                        tracking-[-0.015em]
-                        text-[#263247]
-                        transition-all
-                        duration-300
-                        group-hover:translate-x-1
-                        group-hover:text-[#172033]
-                      "
-                    >
+                    <h3 className="text-[clamp(0.95rem,1.7vw,1.55rem)] font-medium leading-tight tracking-[-0.015em] text-white/90 transition-all duration-300 group-hover:translate-x-1 group-hover:text-white">
                       {area}
                     </h3>
-
                   </div>
 
-
                   {/* Arrow */}
-                  <div
-                    className="
-                      hidden
-                      shrink-0
-                      sm:block
-                    "
-                  >
-                    <span
-                      className="
-                        text-sm
-                        text-[#a6abb3]
-                        transition-all
-                        duration-300
-                        group-hover:translate-x-1
-                        group-hover:text-[#2455c3]
-                      "
-                    >
+                  <div className="hidden shrink-0 sm:block">
+                    <span className="text-sm text-white/45 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#8eace6]">
                       →
                     </span>
                   </div>
-
                 </div>
-
               </motion.div>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
-
     </main>
   );
 };
