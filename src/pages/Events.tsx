@@ -2,6 +2,17 @@ import { motion } from "framer-motion";
 
 const events = [
   {
+    title:"Workshop for ‘Rural Technology Popularization Among NGOs and Villagers’",
+    location: "Centre for Rural Development and Innovative Sustainable Technology (CRDIST), Indian Institute of Technology Kharagpur",
+    date: "20th – 22nd November 2026",
+  },
+  {
+    title:
+      "International Conference on ‘Law, Governance, and Society’",
+    location: "IIT Kharagpur",
+    date: "13th – 25th November 2026",
+  },
+  {
     title:"Awareness Building Workshop on 'Health and Hygiene for Rural Women' and 'Alternative Household Energy for Rural Areas' Under the Aegis of Unnat Bharat Abhiyan, IIT Kharagpur Unit",
     location: "Centre for Rural Development and Innovative Sustainable Technology (CRDIST), Indian Institute of Technology Kharagpur",
     date: "19 March 2026",
