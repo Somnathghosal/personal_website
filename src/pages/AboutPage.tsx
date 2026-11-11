@@ -254,12 +254,16 @@ const AboutPage = () => {
 
 
     {/* About Video */}
+    
     <div className="w-full max-w-4xl mx-auto aspect-video overflow-hidden rounded-xl shadow-lg bg-black">
   <video
     className="w-full h-full object-cover"
     controls
     preload="metadata"
     playsInline
+    autoPlay
+    muted
+    loop
   >
     <source src={AboutVideo} type="video/mp4" />
     Your browser does not support the video tag.
