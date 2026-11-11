@@ -1,7 +1,7 @@
 import { BookMarked, Calendar, FileText, PlayCircle } from "lucide-react";
 import { motion } from "framer-motion";
 // import { FooterVideo } from "../components/FooterImageSlider";
-
+import AboutVideo from "../assests/Video2.mp4";
 
 const AboutPage = () => {
   // Blog posts data array for cleaner rendering
@@ -252,17 +252,19 @@ const AboutPage = () => {
       "Empowering Communities: The Participatory Action Research" by Dr. Somnath Ghosal
     </p>
 
-    {/* YouTube Video */}
+
+    {/* About Video */}
     <div className="w-full max-w-4xl mx-auto aspect-video overflow-hidden rounded-xl shadow-lg bg-black">
-      <iframe
-        className="w-full h-full"
-        src="https://www.youtube.com/embed/BD_qccaf_p8?si=qcgeozPZDiU2dJHy"
-        title="Empowering Communities: The Participatory Action Research by Dr. Somnath Ghosal"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      />
-    </div>
+  <video
+    className="w-full h-full object-cover"
+    controls
+    preload="metadata"
+    playsInline
+  >
+    <source src={AboutVideo} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
   </div>
 </div>
         {/* Events Section */}
